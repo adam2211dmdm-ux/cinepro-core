@@ -1,4 +1,4 @@
-// Vercel serverless entry for CinePro Core.
+// Vercel serverless entry for CinePro Core. (v3 — force rebuild 2026-11-26)
 //
 // Upstream src/server.ts boots a plain Node server (app.listen() + fs-based
 // provider discovery), which cannot run on serverless as-is. This wrapper
