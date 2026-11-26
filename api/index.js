@@ -107,5 +107,14 @@ function bootApp() {
 
 export default async function handler(req, res) {
     const app = await bootApp();
+    // Vercel maps this function to /api/* (no rewrite). The OMSS routes live
+    // at /v1/..., so strip the /api prefix before Fastify sees the request.
+    // /api/index and /api both mean the root status page.
+    let url = req.url || '/';
+    if (url === '/api' || url.startsWith('/api/')) {
+        url = url.slice(4) || '/';
+        if (url === '/index') url = '/';
+        req.url = url;
+    }
     app.server.emit('request', req, res);
 }
