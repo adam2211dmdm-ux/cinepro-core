@@ -2,6 +2,9 @@
     "name": "cinepro-core",
     "main": "dist/server.js",
     "compatibility_date": "2026-05-24",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
     "build": {
         "command": "npm install && npm run build"
     },
@@ -19,6 +22,8 @@
         "MCP_ENABLED": "true"
     },
     "secrets": {
-        "required": ["TMDB_API_KEY"]
+        "required": [
+            "TMDB_API_KEY"
+        ]
     }
 }
